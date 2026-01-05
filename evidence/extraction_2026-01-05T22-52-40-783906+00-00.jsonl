@@ -1,1 +1,0 @@
-{"field_name": "effective_date", "decision": "STOP", "value": null, "evidence": null, "confidence": 0.0, "stop_reason": "conflicting_values", "stop_proof": {"candidates": [{"value": "01/15/2025", "confidence": 0.9, "evidence": "01/15/2025"}, {"value": "January 15, 2025", "confidence": 0.8, "evidence": "January 15, 2025"}]}}

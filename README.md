@@ -6,6 +6,9 @@
 
 ## Philosophy: STOP-first
 
+- **This project does not aim to extract everything.**
+- **Extraction occurs only when evidence is sufficient.**
+- **When evidence is insufficient, the system stops and proves why.**
 - **Evidence Integrity > Recall**: Only extract values with verifiable document evidence
 - **Default: STOP**: When evidence is insufficient, conflicting, or missing → stop extraction
 - **Negative Proof**: Every STOP includes explicit reason + preserved artifacts
@@ -154,7 +157,7 @@ All extractions must satisfy:
 
 ## Reference
 
-Inspired by **[ajt-negative-proof-sim](https://github.com/anthropics/ajt-negative-proof-sim)** (Echo Judgment System).
+**Motivated by [ajt-negative-proof-sim](https://github.com/anthropics/ajt-negative-proof-sim) (sealed reference).**
 
 Core principle: **Prove extraction succeeded OR prove why you stopped.**
 

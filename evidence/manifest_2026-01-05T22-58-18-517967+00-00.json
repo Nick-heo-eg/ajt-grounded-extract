@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-01-05T22:53:10.051721+00:00",
+  "timestamp": "2026-01-05T22:58:18.517967+00:00",
   "document_hash": "382a5c2d232f23159bb2706a4b9d64257afec99244e7110da14f2e86f0042574",
-  "extraction_file": "evidence/extraction_2026-01-05T22-53-10-051721+00-00.jsonl",
+  "extraction_file": "evidence/extraction_2026-01-05T22-58-18-517967+00-00.jsonl",
   "extraction_hash": "12909a3ba55a9000c6cade4bfc2bddb479b55cebd4bc92f4a3d57b457d451508",
   "result_count": 1,
   "stop_events": [

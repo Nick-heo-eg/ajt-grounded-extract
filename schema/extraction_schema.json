@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "fields": [
+    {
+      "name": "effective_date",
+      "type": "string",
+      "description": "The date when the document or policy becomes effective",
+      "required": true,
+      "extraction_hints": [
+        "Look for phrases like 'effective date:', 'effective as of', 'becomes effective on'",
+        "Date format: YYYY-MM-DD or MM/DD/YYYY or written form",
+        "Must be explicitly stated, not inferred"
+      ]
+    }
+  ],
+  "evidence_requirements": {
+    "min_confidence": 0.7,
+    "require_exact_quote": true,
+    "require_offset_mapping": true,
+    "stop_on_conflict": true
+  }
+}

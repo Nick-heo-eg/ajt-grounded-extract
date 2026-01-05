@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-01-05T22:52:53.546468+00:00",
+  "document_hash": "6ead651b5df44d91447d9a4131626e2454bb9b3f535593246492d77096762bd9",
+  "extraction_file": "evidence/extraction_2026-01-05T22-52-53-546468+00-00.jsonl",
+  "extraction_hash": "1d9af605ac555e3e84b96b42d9cb793fef60a298f75f787a26c221ccee43fe43",
+  "result_count": 1,
+  "stop_events": [
+    {
+      "field_name": "effective_date",
+      "decision": "STOP",
+      "value": null,
+      "evidence": null,
+      "confidence": 0.0,
+      "stop_reason": "conflicting_values",
+      "stop_proof": {
+        "candidates": [
+          {
+            "value": "01/15/2025",
+            "confidence": 0.9,
+            "evidence": "01/15/2025"
+          },
+          {
+            "value": "January 15, 2025",
+            "confidence": 0.8,
+            "evidence": "January 15, 2025"
+          }
+        ]
+      }
+    }
+  ],
+  "accept_events": [],
+  "trace_signature": "8ad2244c90a4201870419179c734f67aaee16c19cdd5411b51a2841da0d0272b"
+}

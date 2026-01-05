@@ -1,0 +1,9 @@
+# Minimal dependencies for local execution
+# No ML frameworks, no cloud services
+
+# None required for basic operation
+# All functionality uses Python standard library
+
+# Optional (for future LLM extraction):
+# anthropic>=0.18.0
+# openai>=1.0.0

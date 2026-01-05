@@ -1,0 +1,42 @@
+SOFTWARE LICENSE AGREEMENT
+
+This Software License Agreement ("Agreement") is entered into by and between
+TechCorp Solutions Inc. ("Licensor") and Customer ("Licensee").
+
+1. GRANT OF LICENSE
+
+Subject to the terms and conditions of this Agreement, Licensor hereby grants
+to Licensee a non-exclusive, non-transferable license to use the Software.
+
+2. EFFECTIVE DATE
+
+This Agreement becomes effective on the date specified below and shall remain
+in effect for a period of twelve (12) months unless terminated earlier in
+accordance with Section 7 below.
+
+Effective Date: 01/15/2025
+
+3. LICENSE FEE
+
+Licensee shall pay to Licensor a one-time license fee of $5,000 USD within
+thirty (30) days of the effective date.
+
+4. SUPPORT AND MAINTENANCE
+
+Licensor will provide technical support and software updates during the term
+of this Agreement as described in Exhibit A.
+
+5. CONFIDENTIALITY
+
+Both parties agree to maintain the confidentiality of proprietary information
+shared during the term of this Agreement.
+
+6. WARRANTY DISCLAIMER
+
+THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND.
+
+7. TERMINATION
+
+Either party may terminate this Agreement upon thirty (30) days written notice.
+
+Executed as of the date first written above.

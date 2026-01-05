@@ -1,0 +1,43 @@
+CONSULTING SERVICES AGREEMENT
+
+This Consulting Services Agreement ("Agreement") is made between
+GlobalTech Consulting LLC ("Consultant") and ClientCo Inc. ("Client").
+
+1. SERVICES
+
+Consultant agrees to provide software development consulting services
+as described in the Statement of Work attached as Exhibit A.
+
+2. COMPENSATION
+
+Client shall pay Consultant at a rate of $200 per hour for all services
+rendered. Invoices will be submitted monthly and are due within 15 days.
+
+3. TERM
+
+The initial term of this Agreement shall be six (6) months commencing
+on the Start Date as mutually agreed by both parties in writing.
+
+Upon completion of the initial term, this Agreement may be renewed for
+additional periods by mutual written consent.
+
+4. INTELLECTUAL PROPERTY
+
+All work product created by Consultant shall become the property of Client
+upon full payment of all fees due.
+
+5. CONFIDENTIALITY
+
+Consultant agrees to maintain strict confidentiality regarding all Client
+information and trade secrets.
+
+6. LIMITATION OF LIABILITY
+
+In no event shall either party be liable for consequential damages arising
+from this Agreement.
+
+7. GOVERNING LAW
+
+This Agreement shall be governed by the laws of the State of California.
+
+Signed by authorized representatives of both parties.

@@ -1,8 +1,30 @@
 # Step ②-0: RAG Read-Only Admission
 
-**Status**: Experimental verification of constitutional control over action
+**Status**: FROZEN (v2.0.0-step2.0)
 
 **Philosophy**: This is NOT a RAG system. This is a **conditional authorization experiment** for read-only retrieval.
+
+---
+
+## ⚠️ FROZEN STATUS
+
+This step is **FROZEN as of 2026-01-07**.
+
+**What this means:**
+- `admission/` directory: FROZEN
+- `actions/rag_read.yaml`: FROZEN
+- Attack demos (`rag_attack_*.py`, `rag_attempt_*.py`): FROZEN
+- This document: FROZEN
+
+**To modify:**
+- Requires constitutional amendment (v2.1+)
+- Must include updated attack test suite
+- Any PR modifying frozen files without version bump will be automatically rejected
+
+**Why frozen:**
+This step proved constitutional control over actions. Changes would invalidate that proof.
+
+---
 
 ---
 

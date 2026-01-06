@@ -22,6 +22,25 @@ The Admission Constitution (`ADMISSION_CONSTITUTION.md`) is **FROZEN** as of v1.
 
 ---
 
+## Frozen Components (Step ②-0)
+
+The following components are **FROZEN** as of v2.0.0-step2.0 (2026-01-07):
+
+- `admission/` directory (all files)
+- `actions/rag_read.yaml`
+- `demos/rag_attack_*.py` (attack demos)
+- `demos/rag_attempt_*.py` (admission demos)
+- `STEP_2_0_RAG_ADMISSION.md`
+
+**Why frozen**: These components proved constitutional control over actions. Modifications would invalidate that proof.
+
+**To modify frozen components**:
+- Requires version bump to v2.1+ (constitutional amendment)
+- Must include updated attack test suite demonstrating continued control
+- Any PR modifying frozen files without version bump will be automatically rejected
+
+---
+
 ## What We Accept
 
 ### ✅ Acceptable Contributions

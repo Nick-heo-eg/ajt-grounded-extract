@@ -1,8 +1,16 @@
 # AJT Grounded Extract
 
+**This repository demonstrates how STOP becomes explainable.**
+
 **Extract structured data only when it can be proven; otherwise stop—and prove that you stopped.**
 
-**Status**: Production-ready (v1.0) | **Constitution**: Frozen | **Attack Tests**: 10/10 blocked
+**Status**: Audit-ready (v2.1.0) | **Constitution**: Frozen | **Attack Tests**: 10/10 blocked
+
+---
+
+## Core Principle
+
+> **Most systems explain answers. This one explains why it stopped.**
 
 ---
 

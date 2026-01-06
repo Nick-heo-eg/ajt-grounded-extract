@@ -1,0 +1,6 @@
+action: rag_read
+capability: read_only_retrieval
+side_effects: forbidden
+description: >
+  Retrieve information for inspection only.
+  No execution, no state mutation, no downstream actions allowed.

@@ -2,6 +2,18 @@
 
 **Extract structured data only when it can be proven; otherwise stop—and prove that you stopped.**
 
+**Status**: Production-ready (v1.0) | **Constitution**: Frozen | **Attack Tests**: 10/10 blocked
+
+---
+
+## Installation
+
+```bash
+pip install ajt-grounded-extract
+```
+
+**Zero dependencies.** Pure Python stdlib.
+
 ---
 
 ## Philosophy: STOP-first
@@ -19,10 +31,18 @@
 
 ## What This Is NOT
 
+**This system is blocked-by-design, not secure-by-claim.**
+
 - ❌ Multi-domain rule engine
 - ❌ Enterprise extraction with thresholds
 - ❌ Training/fine-tuning pipeline
 - ❌ High-recall extraction system
+- ❌ "Secure" or "safe" (we demonstrate how attacks are blocked, not claim safety)
+
+**What we guarantee**:
+- ✅ Stoppability (DEFAULT: STOP)
+- ✅ Traceability (decision_maker required)
+- ✅ Audit trail (write-once logs)
 
 ---
 

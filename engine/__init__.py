@@ -4,24 +4,24 @@ AJT Grounded Extract - Engine Module
 STOP-first, evidence-grounded extraction engine.
 """
 
-__version__ = "1.0.0"
+__version__ = "2.1.0"
 
 from .ingest import DocumentIngestor
-from .extract import CandidateExtractor
+from .extract import RuleBasedExtractor
 from .ground import EvidenceGrounder
 from .judge import ExtractionJudge, Decision, StopReason
-from .archive import EvidenceArchiver
+from .archive import EvidenceArchive
 from .pipeline import ExtractionPipeline
 from .audit import AuditLogger, DefenseBriefGenerator, RegulatoryReportGenerator
 
 __all__ = [
     "DocumentIngestor",
-    "CandidateExtractor",
+    "RuleBasedExtractor",
     "EvidenceGrounder",
     "ExtractionJudge",
     "Decision",
     "StopReason",
-    "EvidenceArchiver",
+    "EvidenceArchive",
     "ExtractionPipeline",
     "AuditLogger",
     "DefenseBriefGenerator",

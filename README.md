@@ -175,6 +175,27 @@ All extractions must satisfy:
 
 ---
 
+## Regulatory Mapping & Review
+
+This system includes industry-specific regulatory risk mappings for:
+- **Financial Services** — Authorization scope, customer isolation, advisory vs execution separation
+- **Healthcare** — Patient data isolation, complete clinical evidence requirements, clinician traceability
+- **Legal Practice** — Attorney responsibility, client-matter isolation, conflict-of-interest prevention
+
+**Navigation**: See [REGULATORY_REVIEW_GUIDE.md](REGULATORY_REVIEW_GUIDE.md) for audience-specific entry points.
+
+**Key documents**:
+- [REGULATORY_META_MAP.md](REGULATORY_META_MAP.md) — Cross-industry risk-control mappings
+- [docs/REG_MAP_FINANCE.md](docs/REG_MAP_FINANCE.md) — Financial services mapping
+- [docs/REG_MAP_HEALTHCARE.md](docs/REG_MAP_HEALTHCARE.md) — Healthcare mapping
+- [docs/REG_MAP_LEGAL.md](docs/REG_MAP_LEGAL.md) — Legal practice mapping
+- [COMPLIANCE_GUIDE.md](COMPLIANCE_GUIDE.md) — Audit artifact generation
+- [ATTACK_TEST.md](ATTACK_TEST.md) — Adversarial verification results
+
+**Principle**: This project demonstrates how specified risks are blocked. It does not claim regulatory compliance.
+
+---
+
 ## Reference
 
 **Motivated by [ajt-negative-proof-sim](https://github.com/anthropics/ajt-negative-proof-sim) (sealed reference).**

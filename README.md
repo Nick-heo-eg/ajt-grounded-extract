@@ -1,16 +1,23 @@
 # AJT Grounded Extract
 
-**This repository demonstrates how STOP becomes explainable.**
-
-**Extract structured data only when it can be proven; otherwise stop—and prove that you stopped.**
-
-**Status**: Audit-ready (v2.1.0) | **Constitution**: Frozen | **Attack Tests**: 10/10 blocked
+**Judgment-first grounded extraction engine.**
+**Returns ACCEPT with evidence or STOP with proof. Nothing in between.**
 
 ---
 
-## Core Principle
+## STOP Is Not Failure
 
-> **Most systems explain answers. This one explains why it stopped.**
+**STOP is a judgment.**
+**STOP is an audit artifact.**
+**STOP is how this system succeeds when evidence is insufficient.**
+
+Most systems explain answers. **This one explains why it stopped.**
+
+---
+
+## Status
+
+**v2.1.0** — Audit-ready | Constitution: Frozen | Attack Tests: 10/10 blocked
 
 ---
 
@@ -21,6 +28,14 @@ pip install ajt-grounded-extract
 ```
 
 **Zero dependencies.** Pure Python stdlib.
+
+---
+
+## Core Principle
+
+**Extract structured data only when it can be proven; otherwise stop—and prove that you stopped.**
+
+> **Most systems explain answers. This one explains why it stopped.**
 
 ---
 
@@ -205,6 +220,20 @@ This system includes industry-specific regulatory risk mappings for:
 ---
 
 ## Reference
+
+### Normative Specification
+
+This implementation follows the **AJT (Adjudicative Judgment Trace)** constitutional framework:
+- **Spec Repository**: [ajt-spec](https://github.com/Nick-heo-eg/ajt-spec) — Normative rules and judgment structure
+- **Reference Implementation**: This repository (ajt-grounded-extract) — Executable proof of concept
+
+**Relationship**:
+- `ajt-spec`: Constitutional rules (what must be proven)
+- `ajt-grounded-extract`: Execution + case law (how it's proven in practice)
+
+---
+
+### Motivation
 
 **Motivated by [ajt-negative-proof-sim](https://github.com/anthropics/ajt-negative-proof-sim) (sealed reference).**
 

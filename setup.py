@@ -9,10 +9,10 @@ readme = Path("README.md").read_text(encoding="utf-8")
 
 setup(
     name="ajt-grounded-extract",
-    version="1.0.0",
+    version="2.1.0",
     author="AJT Contributors",
     author_email="",
-    description="STOP-first, evidence-grounded document extraction with audit-grade negative proof",
+    description="Judgment-first grounded extraction engine. Returns ACCEPT with evidence or STOP with proof. Nothing in between.",
     long_description=readme,
     long_description_content_type="text/markdown",
     url="https://github.com/Nick-heo-eg/ajt-grounded-extract",
@@ -50,6 +50,7 @@ setup(
         "Documentation": "https://github.com/Nick-heo-eg/ajt-grounded-extract/blob/main/README.md",
         "Source": "https://github.com/Nick-heo-eg/ajt-grounded-extract",
         "Tracker": "https://github.com/Nick-heo-eg/ajt-grounded-extract/issues",
+        "Normative Spec": "https://github.com/Nick-heo-eg/ajt-spec",
         "Constitution": "https://github.com/Nick-heo-eg/ajt-grounded-extract/blob/main/ADMISSION_CONSTITUTION.md",
         "Attack Tests": "https://github.com/Nick-heo-eg/ajt-grounded-extract/blob/main/ATTACK_TEST.md",
     },

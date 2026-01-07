@@ -224,11 +224,11 @@ This system includes industry-specific regulatory risk mappings for:
 ### Normative Specification
 
 This implementation follows the **AJT (AI Judgment Trail)** constitutional framework:
-- **Spec Repository**: [ajt-spec](https://github.com/Nick-heo-eg/ajt-spec) — Normative rules and judgment structure
+- **Spec Repository**: [spec](https://github.com/Nick-heo-eg/spec) — Normative rules and judgment structure
 - **Reference Implementation**: This repository (ajt-grounded-extract) — Executable proof of concept
 
 **Relationship**:
-- `ajt-spec`: Constitutional rules (what must be proven)
+- `spec`: Constitutional rules (what must be proven)
 - `ajt-grounded-extract`: Execution + case law (how it's proven in practice)
 
 ---

@@ -167,7 +167,7 @@ This release was developed with:
 - ajt-negative-proof-sim reference architecture (negative proof methodology)
 - Adversarial testing methodology (attack-driven verification)
 
-Motivated by: [ajt-negative-proof-sim](https://github.com/anthropics/ajt-negative-proof-sim) (sealed reference)
+Motivated by: [ajt-negative-proof-sim](https://github.com/Nick-heo-eg/ajt-negative-proof-sim) (sealed reference)
 
 ---
 

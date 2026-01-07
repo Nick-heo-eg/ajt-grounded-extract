@@ -109,7 +109,7 @@ All artifacts include:
 
 ## Reference Link
 
-Inspired by: **[ajt-negative-proof-sim](https://github.com/anthropics/ajt-negative-proof-sim)**
+Inspired by: **[ajt-negative-proof-sim](https://github.com/Nick-heo-eg/ajt-negative-proof-sim)**
 (Echo Judgment System)
 
 Core principle: **Prove extraction succeeded OR prove why you stopped.**

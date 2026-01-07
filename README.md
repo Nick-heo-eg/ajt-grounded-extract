@@ -235,7 +235,7 @@ This implementation follows the **AJT (AI Judgment Trail)** constitutional frame
 
 ### Motivation
 
-**Motivated by [ajt-negative-proof-sim](https://github.com/anthropics/ajt-negative-proof-sim) (sealed reference).**
+**Motivated by [ajt-negative-proof-sim](https://github.com/Nick-heo-eg/ajt-negative-proof-sim) (sealed reference).**
 
 Core principle: **Prove extraction succeeded OR prove why you stopped.**
 

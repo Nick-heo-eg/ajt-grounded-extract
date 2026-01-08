@@ -5,6 +5,33 @@
 
 ---
 
+## Why This Exists
+
+Most extraction systems fail silently or hallucinate values when evidence is weak. They optimize for recall, not integrity. When deployed in compliance-critical contexts (contracts, medical records, financial documents), a confidently wrong extraction is worse than no extraction at all.
+
+This system inverts that assumption: **extraction happens only when document evidence is sufficient**. When it's not, the system stops—and produces an auditable artifact explaining what was evaluated and why extraction did not proceed.
+
+Most systems explain answers. **This one explains why it stopped.**
+
+---
+
+## When You Would Use This
+
+- **Contract/legal document extraction** where incorrect values create liability
+- **Regulatory compliance pipelines** requiring audit trails for AI decisions
+- **RAG systems with strict grounding requirements** (healthcare, finance)
+- **Document processing where silent failures are unacceptable**
+- **Systems where "I don't know" is a valid and valuable output**
+- **Contexts where negative proof (evidence of non-execution) is required**
+
+---
+
+## What This Is (in one sentence)
+
+A decision recording system that produces STOP judgments with negative proof or ACCEPT judgments with document-grounded evidence—nothing in between.
+
+---
+
 ## STOP Is Not Failure
 
 **STOP is a judgment.**
@@ -18,6 +45,14 @@ Most systems explain answers. **This one explains why it stopped.**
 ## Status
 
 **v2.1.0** — Audit-ready | Constitution: Frozen | Attack Tests: 10/10 blocked
+
+### Why Attack Tests Exist
+
+Attack tests verify judgment boundaries—not to prevent malicious users, but to confirm that STOP decisions hold under intentional pressure.
+
+Each test attempts to force extraction when evidence is insufficient (adversarial prompts, conflicting values, edge cases). A successful test is one where the system **still stops** and produces the same auditable proof.
+
+This is not prompt security. This is judgment integrity verification.
 
 ---
 

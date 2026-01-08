@@ -53,6 +53,11 @@ def main():
         elif result['decision'] == 'STOP':
             print(f"  Reason: {result['stop_reason']}")
             print(f"  Proof: {json.dumps(result['stop_proof'], indent=4)}")
+            print()
+            print("  ℹ️  STOP Advisory:")
+            print("     This STOP is an advisory judgment signal.")
+            print("     Execution authority remains with the caller.")
+            print("     This system records the rationale for intentional non-execution.")
         print()
 
     # Summary

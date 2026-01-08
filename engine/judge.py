@@ -114,7 +114,9 @@ class ExtractionJudge:
             "evidence": candidate["evidence"],
             "confidence": candidate["confidence"],
             "stop_reason": None,
-            "stop_proof": None
+            "stop_proof": None,
+            "decision_role": "advisory",
+            "execution_authority": "external"
         }
 
     def _stop(
@@ -131,5 +133,9 @@ class ExtractionJudge:
             "evidence": None,
             "confidence": 0.0,
             "stop_reason": reason.value,
-            "stop_proof": proof
+            "stop_proof": proof,
+            "decision_role": "advisory",
+            "execution_authority": "external",
+            "stop_semantics": "non_blocking",
+            "negative_proof_type": "intentional_non_execution"
         }

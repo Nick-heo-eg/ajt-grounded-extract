@@ -52,20 +52,118 @@ pip install ajt-grounded-extract
 
 ---
 
-## What This Is NOT
+## What This System Is
 
-**This system is blocked-by-design, not secure-by-claim.**
+**A judgment trace generator for grounded extraction.**
 
+- ✅ **Records reasoning** about extraction decisions (STOP/ACCEPT)
+- ✅ **Produces negative proof** when intentional non-execution occurs
+- ✅ **Generates audit artifacts** with evidence grounding
+- ✅ **Explains why extraction did NOT proceed** (primary output for STOP events)
+
+**This is a judgment recording component, not an autonomous decision system.**
+
+---
+
+## What This System Is NOT
+
+**This system records judgments; it does not make decisions on behalf of the caller.**
+
+- ❌ **Decision engine** — Does not execute, enforce, or decide for you
+- ❌ **Policy executor** — Does not implement business rules or enforce outcomes
+- ❌ **Automation controller** — Does not trigger actions based on judgments
+- ❌ **Enforcement system** — Does not block, allow, or control execution flow
 - ❌ Multi-domain rule engine
 - ❌ Enterprise extraction with thresholds
 - ❌ Training/fine-tuning pipeline
 - ❌ High-recall extraction system
-- ❌ "Secure" or "safe" (we demonstrate how attacks are blocked, not claim safety)
 
-**What we guarantee**:
-- ✅ Stoppability (DEFAULT: STOP)
-- ✅ Traceability (decision_maker required)
-- ✅ Audit trail (write-once logs)
+**What we provide**:
+- ✅ **Advisory judgment signals** (STOP = recommendation, not block)
+- ✅ **Negative proof artifacts** (evidence of intentional non-execution)
+- ✅ **Traceability** (decision_maker identity required)
+- ✅ **Audit trail** (write-once logs with reasoning)
+
+---
+
+## Responsibility Boundary
+
+**This system does NOT own execution authority, decision outcomes, or result responsibility.**
+
+### What This System Does
+- **Recommend** extraction actions based on evidence sufficiency
+- **Record** the rationale for STOP/ACCEPT judgments
+- **Explain** why execution did NOT proceed (for STOP events)
+- **Produce** audit artifacts with evidence grounding
+
+### What This System Does NOT Do
+- **Execute** business logic or trigger downstream actions
+- **Enforce** policies or prevent operations
+- **Decide** on behalf of the caller or end user
+- **Own** the outcome or consequences of extraction results
+
+### Execution Authority
+**Execution authority and result ownership remain with the external caller.**
+
+- The caller decides whether to act on STOP/ACCEPT signals
+- The caller owns the consequences of using (or ignoring) extraction results
+- This system generates reasoning traces, not commands
+- STOP is an **advisory interruption**, not a hard block
+
+---
+
+## STOP Semantics
+
+**STOP is not a failure. STOP is not a block. STOP is an advisory judgment signal.**
+
+### What STOP Means
+- **STOP = Advisory signal**: "Extraction did not proceed due to insufficient evidence"
+- **STOP = Intentional non-execution**: A deliberate decision not to extract, with reasoning
+- **STOP = Negative proof**: Evidence that the system evaluated alternatives and chose not to proceed
+
+### What STOP Is NOT
+- ❌ **Not a hard block** — Does not prevent the caller from taking action
+- ❌ **Not a failure** — Successful operation that produced a judgment artifact
+- ❌ **Not enforcement** — Does not control or restrict external systems
+- ❌ **Not a command** — Does not instruct the caller what to do
+
+### STOP Output
+When STOP occurs, this system produces:
+- **stop_reason**: Machine-readable reason code (e.g., `no_candidates_found`)
+- **stop_proof**: Artifact showing what was evaluated and why extraction did not proceed
+- **decision_log**: Timestamped record of the judgment process
+
+**Example STOP message:**
+> "This STOP is an advisory judgment signal. Execution authority remains with the caller. This system records the rationale for intentional non-execution."
+
+---
+
+## Negative Proof
+
+**Negative proof is a first-class artifact produced when intentional non-execution occurs.**
+
+### Definition
+A **negative proof** is evidence that:
+1. The system **evaluated** extraction candidates
+2. The system **determined** that evidence was insufficient
+3. The system **recorded** the reasoning and evaluated alternatives
+4. The system **chose** not to extract (intentional non-execution)
+
+### Structure
+Negative proof includes:
+- **What was searched**: Fields, patterns, or rules evaluated
+- **What was found**: Number of candidates, conflicting values, confidence scores
+- **Why extraction stopped**: Explicit reason code with supporting data
+- **When the judgment was made**: Timestamp and hash for integrity
+
+### Purpose
+Negative proof serves as:
+- **Audit trail** for regulatory compliance
+- **Debugging evidence** for system operators
+- **Transparency artifact** for end users
+- **Accountability record** showing the system did NOT blindly execute
+
+**Negative proof is not a failure report—it is evidence of intentional non-execution.**
 
 ---
 
@@ -117,7 +215,7 @@ open viewer/stop_example_viewer.html
 
 ## Output Format
 
-### JSON Result
+### JSON Result (ACCEPT)
 ```json
 {
   "field_name": "effective_date",
@@ -130,9 +228,17 @@ open viewer/stop_example_viewer.html
     "line": 12,
     "context": "...Effective Date: 01/15/2025..."
   },
-  "confidence": 0.9
+  "confidence": 0.9,
+  "decision_role": "advisory",
+  "execution_authority": "external"
 }
 ```
+
+**Metadata fields**:
+- `decision_role`: Always `"advisory"` — This system recommends, does not decide
+- `execution_authority`: Always `"external"` — Caller owns execution decisions
+
+---
 
 ### STOP Event
 ```json
@@ -144,9 +250,19 @@ open viewer/stop_example_viewer.html
   "stop_proof": {
     "searched": true,
     "candidates_found": 0
-  }
+  },
+  "decision_role": "advisory",
+  "execution_authority": "external",
+  "stop_semantics": "non_blocking",
+  "negative_proof_type": "intentional_non_execution"
 }
 ```
+
+**Metadata fields**:
+- `decision_role`: Always `"advisory"` — STOP is a recommendation, not enforcement
+- `execution_authority`: Always `"external"` — Caller decides how to handle STOP
+- `stop_semantics`: Always `"non_blocking"` — STOP does not prevent caller action
+- `negative_proof_type`: Always `"intentional_non_execution"` — Evidence of deliberate non-extraction
 
 ---
 
@@ -238,6 +354,21 @@ This implementation follows the **AJT (AI Judgment Trail)** constitutional frame
 **Motivated by [ajt-negative-proof-sim](https://github.com/Nick-heo-eg/ajt-negative-proof-sim) (sealed reference).**
 
 Core principle: **Prove extraction succeeded OR prove why you stopped.**
+
+---
+
+## Recent Changes (v2.1.0 → Boundary Seal)
+
+**Purpose**: Seal responsibility boundary and STOP semantics to eliminate ambiguity about system role.
+
+**Changes**:
+1. **Responsibility Boundary Documentation** — Explicit declaration that this system does not execute, enforce, or decide on behalf of the caller. Execution authority and result ownership remain external.
+2. **STOP Semantics Clarification** — STOP is an advisory signal (non-blocking recommendation), not a hard block or failure. STOP events produce negative proof artifacts as first-class outputs.
+3. **Negative Proof Definition** — Formal definition of negative proof as evidence of intentional non-execution, including what was evaluated and why extraction did not proceed.
+4. **Decision Log Metadata** — All judgment outputs now include fixed metadata fields: `decision_role=advisory`, `execution_authority=external`, `stop_semantics=non_blocking`, `negative_proof_type=intentional_non_execution`.
+5. **Runtime Advisory Messages** — CLI output includes explicit advisory notice when STOP occurs: "This STOP is an advisory judgment signal. Execution authority remains with the caller."
+
+**No functional changes**: Judgment logic, STOP conditions, and LLM behavior unchanged. This release clarifies system boundaries and removes interpretation ambiguity.
 
 ---
 

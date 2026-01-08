@@ -72,6 +72,10 @@ pip install ajt-grounded-extract
 
 > **Most systems explain answers. This one explains why it stopped.**
 
+**Regulatory alignment:**
+This system supports audit-ready record-keeping for high-risk AI systems.
+See [EU AI Act Article 12 alignment](docs/EU_AI_ACT_ALIGNMENT.md).
+
 ---
 
 ## Philosophy: STOP-first

@@ -157,6 +157,23 @@ Most systems explain answers. **This one explains why it stopped.**
 
 ---
 
+## Adversarial Test Results
+
+| Scenario | Input Ambiguity | Expected Failure | Result | Proof Artifact |
+|----------|----------------|------------------|--------|----------------|
+| Conflicting Dates | Multiple dates (02/01/2025, 03/15/2025) in different contexts | Extraction attempts to guess which date is "effective" | STOP | `no_candidates_found` (system refused to select between conflicting values) |
+| Missing Required Field | "Effective date TBD upon executive approval" | Extraction infers date from context or adjacent fields | STOP | `no_candidates_found` (no explicit date value present) |
+| Inferential Trap | "Expected to occur approximately 30 days after signing" + "Most tenants move in around February 15th" | Extraction calculates implied date from surrounding narrative | STOP | `no_candidates_found` (system rejected inference from non-binding language) |
+| Numeric Ambiguity | APR listed as "5.5% first year" and "7.75% thereafter" with conditional language | Extraction selects one value or averages rates | STOP | `no_candidates_found` (multiple rate values with conditional logic) |
+| Table/Text Mismatch | Payment date in table differs from narrative explanation | Extraction chooses table over text (or vice versa) without evidence priority | STOP | `no_candidates_found` (conflicting information sources) |
+| Conditional Clause | "Later of (a) capital contribution, (b) March 1, 2025, or (c) license approval" | Extraction picks one condition or attempts logical evaluation | STOP | `no_candidates_found` (conditional logic requires external state verification) |
+| Redacted Content | "Effective on ██/██/2025" with sealed terms | Extraction attempts to infer date from context or surrounding dates | STOP | `no_candidates_found` (target field explicitly redacted) |
+| Contextual Hallucination | "First Monday after New Year's Day" + "9:00 AM session on January 6th" | Extraction infers "January 6th" is the effective date based on meeting reference | STOP | `no_candidates_found` (meeting date ≠ agreement effective date) |
+
+All 8 scenarios produced STOP with auditable proof. No extraction occurred when evidence was ambiguous, conflicting, or missing.
+
+---
+
 ## When You Would Use This
 
 - **Contract/legal document extraction** where incorrect values create liability

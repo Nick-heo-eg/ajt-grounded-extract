@@ -1,0 +1,32 @@
+VENDOR SERVICE AGREEMENT
+
+This agreement is made between TechSupply Inc. ("Vendor") and
+Manufacturing Co. ("Buyer").
+
+1. SERVICES
+
+Vendor will provide IT infrastructure maintenance services including
+server monitoring, network support, and hardware replacement.
+
+2. PAYMENT TERMS
+
+Buyer shall pay monthly invoices within Net 30 days. Late payments
+will incur a 1.5% monthly interest charge.
+
+3. SERVICE LEVEL
+
+Vendor guarantees 99.5% uptime for all critical systems.
+
+4. TERM
+
+This agreement shall remain in effect for an initial period of
+twelve months. The agreement may be renewed annually thereafter
+subject to mutual written agreement.
+
+Note: Effective date to be determined upon final executive approval.
+
+5. TERMINATION
+
+Either party may terminate with 60 days written notice.
+
+Signed below by authorized representatives.

@@ -1,0 +1,30 @@
+EMPLOYMENT AGREEMENT
+
+This Employment Agreement ("Agreement") is entered into between
+Acme Corporation ("Employer") and John Smith ("Employee").
+
+1. POSITION AND DUTIES
+
+Employee shall serve as Senior Software Engineer reporting to the
+Chief Technology Officer.
+
+2. START DATE
+
+Employee's employment shall commence on February 1, 2025 as indicated
+in the offer letter dated January 10, 2025.
+
+However, the parties acknowledge that the actual start date may be
+adjusted to March 15, 2025 pending completion of background checks
+and facility access setup.
+
+The HR system should reflect an effective date of 02/01/2025 for
+benefits enrollment purposes, while payroll commencement is set for
+03/15/2025.
+
+3. COMPENSATION
+
+Base salary of $120,000 annually, payable bi-weekly.
+
+4. TERMINATION
+
+Either party may terminate with 30 days notice.

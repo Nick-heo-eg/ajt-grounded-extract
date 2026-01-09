@@ -5,6 +5,29 @@
 
 ---
 
+## Quick Start (STOP-first)
+
+Run the system on a document with missing required evidence. The expected and correct behavior is to STOP.
+
+```bash
+python run.py examples/stop_example.txt
+```
+
+```json
+{
+  "status": "STOP",
+  "reason": "insufficient evidence",
+  "searched": ["effective_date"],
+  "found": []
+}
+```
+
+STOP is a successful outcome. It represents intentional non-execution with auditable proof.
+
+Negative proof is not a failure report — it is evidence of intentional non-execution.
+
+---
+
 ## Why This Exists
 
 Most extraction systems fail silently or hallucinate values when evidence is weak. They optimize for recall, not integrity. When deployed in compliance-critical contexts (contracts, medical records, financial documents), a confidently wrong extraction is worse than no extraction at all.
@@ -230,7 +253,7 @@ Document → Ingest → Extract → Ground → Judge → Archive
 
 ---
 
-## Quick Start
+## More Examples
 
 ### Run Extraction
 

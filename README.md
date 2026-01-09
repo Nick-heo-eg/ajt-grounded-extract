@@ -24,6 +24,12 @@ python run.py examples/stop_example.txt
 
 STOP is a successful outcome. It represents intentional non-execution with auditable proof.
 
+### Visual Example: STOP Viewer
+
+![STOP Viewer](docs/images/stop_viewer.png)
+
+*The HTML viewer shows exactly why extraction stopped, what was searched, and the auditable proof artifact.*
+
 Negative proof is not a failure report — it is evidence of intentional non-execution.
 
 ---
@@ -272,6 +278,12 @@ Open generated HTML viewer:
 open viewer/accept_example_viewer.html
 open viewer/stop_example_viewer.html
 ```
+
+#### ACCEPT Viewer: Evidence Grounding
+
+![ACCEPT Viewer](docs/images/accept_viewer.png)
+
+*ACCEPT decisions show the extracted value with exact document span, byte offsets, and highlighted evidence.*
 
 ---
 

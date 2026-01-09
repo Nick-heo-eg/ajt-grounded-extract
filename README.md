@@ -5,32 +5,21 @@
 
 ---
 
-## Quick Start (STOP-first)
+## Executive Summary
 
-Run the system on a document with missing required evidence. The expected and correct behavior is to STOP.
+**The Problem**: Traditional AI extraction systems guess when evidence is unclear. In contracts, medical records, and financial documents, a confident wrong answer costs more than no answer.
 
-```bash
-python run.py examples/stop_example.txt
-```
+**This Solution**: A system that extracts only when it can prove the answer—or stops and explains why it can't.
 
-```json
-{
-  "status": "STOP",
-  "reason": "insufficient evidence",
-  "searched": ["effective_date"],
-  "found": []
-}
-```
+**Business Value**:
+- **Legal/Compliance**: Audit trail shows the system refused to guess (regulatory defense)
+- **Risk Reduction**: Wrong extraction = liability. STOP = documented due diligence.
+- **Operational Trust**: Visible failures (STOP events) get fixed. Silent failures compound.
 
-STOP is a successful outcome. It represents intentional non-execution with auditable proof.
+**What makes this different**: Most systems explain their answers. This one explains why it stopped.
 
-### Visual Example: STOP Viewer
-
-![STOP Viewer](docs/images/stop_viewer.png)
-
-*The HTML viewer shows exactly why extraction stopped, what was searched, and the auditable proof artifact.*
-
-Negative proof is not a failure report — it is evidence of intentional non-execution.
+**For technical readers**: [Jump to Quick Start](#quick-start-stop-first)
+**For business context**: [See Real-World Scenarios](#real-world-scenarios-for-non-technical-readers)
 
 ---
 
@@ -126,6 +115,35 @@ Negative proof is not a failure report — it is evidence of intentional non-exe
 - **Trust**: Stakeholders trust a system that says "I don't know" over one that fabricates answers.
 
 **Bottom line**: This system costs you review time on edge cases. It saves you liability costs on catastrophic errors.
+
+---
+
+## Quick Start (STOP-first)
+
+Run the system on a document with missing required evidence. The expected and correct behavior is to STOP.
+
+```bash
+python run.py examples/stop_example.txt
+```
+
+```json
+{
+  "status": "STOP",
+  "reason": "insufficient evidence",
+  "searched": ["effective_date"],
+  "found": []
+}
+```
+
+STOP is a successful outcome. It represents intentional non-execution with auditable proof.
+
+### Visual Example: STOP Viewer
+
+![STOP Viewer](docs/images/stop_viewer.png)
+
+*The HTML viewer shows exactly why extraction stopped, what was searched, and the auditable proof artifact.*
+
+Negative proof is not a failure report — it is evidence of intentional non-execution.
 
 ---
 

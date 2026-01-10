@@ -193,6 +193,45 @@ The caller decides what to do with that information.
 
 ---
 
+## When You Should NOT Use This
+
+**Do not use Phase 1 if:**
+
+- **You need fast extraction at any cost**
+  - Phase 1 STOPs when evidence is insufficient
+  - STOP means "no answer" not "best guess"
+  - If speed > accuracy, use a different extraction tool
+
+- **You want the system to "try its best"**
+  - Phase 1 refuses to extract without evidence
+  - No fallback heuristics or confidence thresholds
+  - If you need an answer regardless of grounding, this will frustrate you
+
+- **Your use case tolerates hallucination**
+  - Phase 1 is designed for zero-tolerance domains
+  - Contract terms, medical data, financial amounts
+  - If errors are acceptable, standard LLM extraction is faster
+
+- **You need complex reasoning or inference**
+  - Phase 1 extracts what's explicitly stated
+  - No temporal reasoning, no conditional logic
+  - If extraction requires interpretation, use a different approach
+
+- **Audit trails are unnecessary**
+  - Phase 1 produces evidence artifacts for every decision
+  - This adds overhead and storage requirements
+  - If you don't need to prove correctness, skip the artifacts
+
+**This system is for domains where:**
+- Wrong extraction creates liability (legal, medical, financial)
+- Silent failures compound over time
+- "I don't know" is more valuable than "probably this"
+- Evidence grounding is non-negotiable
+
+See [AJT_CORE.md](AJT_CORE.md) for architectural boundaries.
+
+---
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md)

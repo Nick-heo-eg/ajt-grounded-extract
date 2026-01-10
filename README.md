@@ -5,6 +5,23 @@
 
 ---
 
+## What This Repository Is
+
+AJT-Grounded-Extract is not just an extraction tool.
+
+It is a reference implementation of a judgment-oriented architecture
+that explicitly defines where an AI system must stop
+when evidence is insufficient or conflicting.
+
+This repository demonstrates:
+- Explicit stopping as a first-class outcome
+- Structured negative proof instead of silent failure
+- Judgment boundaries enforced by design, not heuristics
+
+Extraction happens only after a judgment boundary is passed.
+
+---
+
 ## Executive Summary
 
 **The Problem**: Traditional AI extraction systems guess when evidence is unclear. In contracts, medical records, and financial documents, a confident wrong answer costs more than no answer.
@@ -31,7 +48,7 @@
 
 **What happens with typical AI systems**:
 - **Contract A**: "30-day notice required" → Extracts "30 days" ✓
-- **Contract B**: No termination clause mentioned → Extracts "30 days" (hallucinated from Contract A) ✗
+- **Contract B**: No termination clause mentioned → Extracts "30 days" (unsupported inference from Contract A) ✗
 - **Contract C**: "Notice period TBD in amendment" → Extracts "TBD" or makes up a number ✗
 
 **Result**: Your procurement team schedules vendor terminations based on wrong dates. Legal liability, business disruption, vendor disputes.
@@ -149,7 +166,7 @@ Negative proof is not a failure report — it is evidence of intentional non-exe
 
 ## Why This Exists
 
-Most extraction systems fail silently or hallucinate values when evidence is weak. They optimize for recall, not integrity. When deployed in compliance-critical contexts (contracts, medical records, financial documents), a confidently wrong extraction is worse than no extraction at all.
+Most extraction systems fail silently or produce unsupported values when evidence is weak. They optimize for recall, not integrity. When deployed in compliance-critical contexts (contracts, medical records, financial documents), a confidently wrong extraction is worse than no extraction at all.
 
 This system inverts that assumption: **extraction happens only when document evidence is sufficient**. When it's not, the system stops—and produces an auditable artifact explaining what was evaluated and why extraction did not proceed.
 
@@ -168,7 +185,7 @@ Most systems explain answers. **This one explains why it stopped.**
 | Table/Text Mismatch | Payment date in table differs from narrative explanation | Extraction chooses table over text (or vice versa) without evidence priority | STOP | `no_candidates_found` (conflicting information sources) |
 | Conditional Clause | "Later of (a) capital contribution, (b) March 1, 2025, or (c) license approval" | Extraction picks one condition or attempts logical evaluation | STOP | `no_candidates_found` (conditional logic requires external state verification) |
 | Redacted Content | "Effective on ██/██/2025" with sealed terms | Extraction attempts to infer date from context or surrounding dates | STOP | `no_candidates_found` (target field explicitly redacted) |
-| Contextual Hallucination | "First Monday after New Year's Day" + "9:00 AM session on January 6th" | Extraction infers "January 6th" is the effective date based on meeting reference | STOP | `no_candidates_found` (meeting date ≠ agreement effective date) |
+| Contextual Inference | "First Monday after New Year's Day" + "9:00 AM session on January 6th" | Extraction infers "January 6th" is the effective date based on meeting reference | STOP | `no_candidates_found` (meeting date ≠ agreement effective date) |
 
 All 8 scenarios produced STOP with auditable proof. No extraction occurred when evidence was ambiguous, conflicting, or missing.
 
@@ -362,6 +379,20 @@ Negative proof serves as:
 - **Accountability record** showing the system did NOT blindly execute
 
 **Negative proof is not a failure report—it is evidence of intentional non-execution.**
+
+---
+
+## Architectural Scope
+
+This repository represents Phase 1 of the AJT approach:
+
+**Phase 1 — Internal Judgment**
+- Judgment rules are enforced inside the extraction pipeline
+- STOP is a valid and expected outcome
+- Evidence grounding is mandatory
+
+Later phases extend this concept outward,
+but are intentionally out of scope for this repository.
 
 ---
 
@@ -573,6 +604,20 @@ Core principle: **Prove extraction succeeded OR prove why you stopped.**
 5. **Runtime Advisory Messages** — CLI output includes explicit advisory notice when STOP occurs: "This STOP is an advisory judgment signal. Execution authority remains with the caller."
 
 **No functional changes**: Judgment logic, STOP conditions, and LLM behavior unchanged. This release clarifies system boundaries and removes interpretation ambiguity.
+
+---
+
+## Judgment Boundary Proofs
+
+This repository includes documented proof cases
+showing where the system explicitly stops.
+
+See:
+- [Judgment Boundary Proofs](docs/JUDGMENT_BOUNDARY_PROOFS.md) — Concrete examples of enforced boundaries
+- [STOP Casebook](docs/STOP_CASEBOOK.md) — Reusable patterns and classification
+
+These documents demonstrate that STOP is not failure,
+but evidence of correct boundary enforcement.
 
 ---
 

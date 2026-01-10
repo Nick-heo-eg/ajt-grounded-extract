@@ -11,9 +11,20 @@ build/
 dist/
 *.egg-info/
 
-# Evidence artifacts (optional: commit examples, ignore production)
-# evidence/*.jsonl
-# evidence/*.json
+# Evidence artifacts (runtime generated)
+evidence/*.jsonl
+evidence/*.json
+
+# Internal working docs
+TASK_COMPLETION_REPORT*.md
+COMMIT_MESSAGE*.txt
+PUSH_READINESS_CHECK.md
+AJT_INTEGRATION.md
+
+# AJT development (not for public Phase 1)
+ajt/
+engine/pipeline_ajt.py
+logs/
 
 # Viewer output (regenerate on demand)
 viewer/*.html

@@ -1,8 +1,18 @@
 # Attack Test: Admission Constitution
 
-**Purpose**: Verify that all logical gaps are sealed against adversarial exploitation.
+## Purpose of These Tests
 
-**Test Philosophy**: Attackers do not break rules; they exploit them. Each test attempts to use the constitution's own language to bypass its intent.
+These attack scenarios are not designed to break the system.
+
+They exist to prove where the system correctly stops.
+
+Each test demonstrates a judgment boundary
+where unsupported, ambiguous, or unsafe inference
+results in an explicit STOP decision.
+
+---
+
+**Test Philosophy**: These tests attempt to use the system's own structure to identify where judgment boundaries must hold. Each scenario validates that the system enforces explicit stop conditions rather than proceeding with uncertain inference.
 
 ---
 
@@ -21,7 +31,7 @@ Bypasses CAN_PROCEED by arguing this is not an 'action'.
 - Label it as "preview" or "recommendation"
 - Avoid admission gate
 
-**Blocked At**:
+**Stopped At**:
 ```
 Interface Section:
 "Action includes generation, recommendation, transformation, execution,
@@ -50,7 +60,7 @@ Returns extracted values as "metadata.effective_date" instead of result.value.
 - Claim metadata updates are not gated actions
 - Bypass admission interface
 
-**Blocked At**:
+**Stopped At**:
 ```
 Interface Section:
 "or any output intended for human or machine decision-making"
@@ -83,7 +93,7 @@ Claims: "Both have same effective_date value, so context is identical."
 - Argue content similarity = context equivalence
 - Bypass one-token-one-execution rule
 
-**Blocked At**:
+**Stopped At**:
 ```
 Token Schema - Context Hash Requirements:
 "context_hash MUST be derived from:
@@ -117,7 +127,7 @@ Attacker pre-computes context_hash:
 - Reuse token indefinitely with crafted contexts
 - Circumvent reuse prohibition
 
-**Blocked At**:
+**Stopped At**:
 ```
 Token Schema - Context Hash Requirements:
 "Manually supplied or reused context_hash values invalidate the token."
@@ -151,7 +161,7 @@ Claims: "Two out of three requirements met, sufficient for admission."
 - Argue majority compliance is sufficient
 - Bypass full proof requirement
 
-**Blocked At**:
+**Stopped At**:
 ```
 Rules Section:
 "Failure to prove any single required condition results in immediate STOP without fallback."
@@ -183,7 +193,7 @@ All fields present, but values are generic/meaningless.
 - Provide no actual traceability
 - Circumvent responsibility requirement
 
-**Blocked At**:
+**Stopped At**:
 ```
 Rule 1 - Proof Requirements:
 "decision_maker MUST be a traceable human or registered system identity.
@@ -217,7 +227,7 @@ Claims: "Token scope was extraction, which completed successfully."
 - Expand scope after admission
 - Bypass intended usage boundary
 
-**Blocked At**:
+**Stopped At**:
 ```
 Token Lifecycle:
 "Context change includes any modification to input, environment, time,
@@ -248,7 +258,7 @@ Attacker claims: "Same day, context unchanged."
 - Argue same-day = same-context
 - Bypass single-use restriction
 
-**Blocked At**:
+**Stopped At**:
 ```
 Token Schema - Context Hash Requirements:
 "context_hash MUST be derived from:
@@ -283,7 +293,7 @@ System B uses token claiming: "I have a valid token."
 - Bypass per-system admission requirements
 - Create token black market
 
-**Blocked At**:
+**Stopped At**:
 ```
 Token Schema - Non-transferability:
 "Tokens are bound to:
@@ -321,7 +331,7 @@ External systems call wrapper's API, bypassing their own admission requirements.
 - Provide extraction-as-a-service without per-caller admission
 - Bypass caller responsibility requirements
 
-**Blocked At**:
+**Stopped At**:
 ```
 Interface Section:
 "Any action offering generation or execution MUST be gated by this interface."

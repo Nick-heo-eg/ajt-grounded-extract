@@ -26,6 +26,10 @@ ajt/
 engine/pipeline_ajt.py
 logs/
 
+# README backups (working copies)
+README_OLD*.md
+README_FULL_BACKUP.md
+
 # Viewer output (regenerate on demand)
 viewer/*.html
 

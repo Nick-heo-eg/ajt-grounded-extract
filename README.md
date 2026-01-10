@@ -50,7 +50,19 @@ See detailed scenarios: [docs/REAL_WORLD_SCENARIOS.md](docs/REAL_WORLD_SCENARIOS
 
 ---
 
-## Quick Start (STOP-first)
+## Quick Start
+
+### ACCEPT Example (Evidence Found)
+
+```bash
+python run.py examples/accept_example.txt
+```
+
+![ACCEPT Viewer](docs/images/accept_viewer.png)
+
+*Evidence grounded: exact quote, page location, and integrity verification.*
+
+### STOP Example (Evidence Missing)
 
 Run the system on a document with missing required evidence. The expected and correct behavior is to STOP.
 
@@ -68,6 +80,12 @@ python run.py examples/stop_example.txt
 ```
 
 STOP is a successful outcome. It represents intentional non-execution with auditable proof.
+
+### Visual Example: STOP Viewer
+
+![STOP Viewer](docs/images/stop_viewer.png)
+
+*The HTML viewer shows exactly why extraction stopped, what was searched, and the auditable proof artifact.*
 
 ---
 

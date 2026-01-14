@@ -1,5 +1,12 @@
 # AJT Grounded Extract
 
+This repository documents experimental execution during research.
+It does not represent a production system, live authority, or active enforcement.
+
+---
+
+
+
 **Judgment-first grounded extraction engine.**
 **Returns ACCEPT with evidence or STOP with proof. Nothing in between.**
 

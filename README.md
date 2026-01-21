@@ -1,5 +1,7 @@
 # AJT Grounded Extract
 
+Grounded extraction: act only when proof exists.
+
 This repository documents experimental execution during research.
 It does not represent a production system, live authority, or active enforcement.
 

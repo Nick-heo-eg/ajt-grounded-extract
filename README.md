@@ -1,5 +1,16 @@
 # AJT Grounded Extract
 
+⚠️ **Archived Repository**
+
+This repository is archived and no longer maintained.
+
+It is preserved as an experimental or evidentiary reference.
+Active development and production-ready implementations are consolidated here:
+
+→ https://github.com/Nick-heo-eg/k-judgment-gate
+
+---
+
 Grounded extraction: act only when proof exists.
 
 This repository documents experimental execution during research.

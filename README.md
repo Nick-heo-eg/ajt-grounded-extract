@@ -1,20 +1,33 @@
 # AJT Grounded Extract
 
-⚠️ **Archived Repository**
+🧊 **Archived Repository**
 
-This repository is archived and no longer maintained.
+This repository represents an *exploratory approach* to grounding-based extraction.
 
-It is preserved as an experimental or evidentiary reference.
-Active development and production-ready implementations are consolidated here:
+The approach was evaluated, documented, and ultimately **abandoned** due to structural limitations discovered during experimentation.
 
+It remains public as a **historical record**, not as an active solution.
+
+**For current implementations:**
 → https://github.com/Nick-heo-eg/k-judgment-gate
 
 ---
 
-Grounded extraction: act only when proof exists.
+**Why This Approach Was Abandoned:**
 
-This repository documents experimental execution during research.
-It does not represent a production system, live authority, or active enforcement.
+This system attempted to enforce extraction grounding through internal judgment layers. While conceptually sound, it revealed fundamental limitations:
+
+1. **Grounding cannot be retrofitted** — Judgment boundaries must exist at the execution layer, not within extractors
+2. **STOP signals without execution control** — Advisory signals are insufficient for accountability
+3. **Complexity without enforcement power** — The architecture was too complex for its actual authority level
+
+These learnings directly informed the design of k-judgment-gate, which positions judgment as a mandatory execution precondition rather than an internal extraction feature.
+
+---
+
+**Preserved as Evidence:**
+
+This repository documents experimental execution during research. It does not represent a production system, live authority, or active enforcement.
 
 ---
 
